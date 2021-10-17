@@ -27,18 +27,14 @@ app.post("/subscribe", async (req, res) => {
 		})
 		.then(() => {
 			// Send a message to devices subscribed to the provided topic.
+			let topic = "sam";
 			let message = {
-				data: "data is not here",
+				data: { score: "850", time: "2:45" },
 				notification: {
 					title: "subscription",
 					body: "someone subscribe",
 				},
-				topic: "no topic",
-				webpush: {
-					fcm_options: {
-						link: "/",
-					},
-				},
+				topic,
 			};
 			admin
 				.messaging()
