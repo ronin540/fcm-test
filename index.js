@@ -24,8 +24,9 @@ app.post("/subscribe", async (req, res) => {
 			// See the MessagingTopicManagementResponse reference documentation
 			// for the contents of response.
 			console.log("Successfully subscribed to topic:", response);
-		})
-		.then(() => {
+		});
+	app
+		.post("/sendNotification", async (req, res) => {
 			// Send a message to devices subscribed to the provided topic.
 			let topic = "sam";
 			let message = {
@@ -52,7 +53,6 @@ app.post("/subscribe", async (req, res) => {
 			console.log("Error subscribing to topic:", error);
 		});
 });
-app.post("/sendNotification", async (req, res) => {});
 app.listen(port, () => {
 	console.log(`app is listening to ${port}`);
 });
