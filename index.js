@@ -2,13 +2,13 @@ const express = require("express");
 const path = require("path");
 
 const admin = require("firebase-admin");
-var serviceAccount = require("./fcm-s-test-firebase-adminsdk-q1kra-c376bbc7b3.json");
+var serviceAccount = require("./fcm-s-test-firebase-adminsdk-q1kra-34fb990e1c.json");
 
 const app = express();
 
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.json());
-const port = 3000;
+const port = 8080;
 
 admin.initializeApp({
 	credential: admin.credential.cert(serviceAccount),
