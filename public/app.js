@@ -33,7 +33,7 @@ function subscribeUser() {
 						body: JSON.stringify(body),
 					};
 
-					fetch("http://localhost:3000/subscribe", options)
+					fetch("/subscribe", options)
 						.then((res) => {
 							console.log(res);
 							console.log("SENT");
