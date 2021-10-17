@@ -46,7 +46,7 @@ app.post("/subscribe", async (req, res) => {
 				.then((response) => {
 					// Response is a message ID string.
 					console.log("Successfully sent message:", response);
-					res.send(res);
+					res.send(response);
 				})
 				.catch((error) => {
 					console.log("Error sending message:", error);
