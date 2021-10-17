@@ -43,3 +43,7 @@ function subscribeUser() {
 		}
 	});
 }
+
+messaging.onMessage((res) => {
+	console.log({ res });
+});
