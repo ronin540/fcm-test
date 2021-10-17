@@ -43,7 +43,11 @@ function subscribeUser() {
 		}
 	});
 }
-
+function sendNotification() {
+	fetch("/sendNotification")
+		.then((response) => response.json())
+		.then((data) => console.log(data));
+}
 messaging.onMessage((res) => {
 	console.log({ res });
 });
