@@ -33,7 +33,7 @@ app.get("/sendNotification", async (req, res) => {
 		data: { score: "850", time: "2:45" },
 		notification: {
 			title: "subscription",
-			body: "someone subscribe",
+			body: "prateek subscribe",
 		},
 		topic,
 	};
@@ -43,7 +43,7 @@ app.get("/sendNotification", async (req, res) => {
 		.then((response) => {
 			// Response is a message ID string.
 			console.log("Successfully sent message:", response);
-			res.send(response);
+			res.send({ response });
 		})
 		.catch((error) => {
 			console.log("Error sending message:", error);

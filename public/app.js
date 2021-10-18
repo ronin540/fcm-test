@@ -28,7 +28,8 @@ function subscribeUser() {
 					let options = {
 						method: "POST",
 						headers: new Headers({
-							"content-type": "application/json",
+							"Content-Type": "application/json",
+							Accept: "application/json",
 						}),
 						body: JSON.stringify(body),
 					};
@@ -44,9 +45,7 @@ function subscribeUser() {
 	});
 }
 function sendNotification() {
-	fetch("/sendNotification")
-		.then((response) => response.json())
-		.then((data) => console.log(data));
+	fetch("/sendNotification").then((response) => console.log(response));
 }
 messaging.onMessage((res) => {
 	console.log({ res });
