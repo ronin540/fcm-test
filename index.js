@@ -25,35 +25,31 @@ app.post("/subscribe", async (req, res) => {
 			// for the contents of response.
 			console.log("Successfully subscribed to topic:", response);
 		});
-
-	app
-		.get("/sendNotification", async (req, res) => {
-			// Send a message to devices subscribed to the provided topic.
-			let topic = "sam";
-			let message = {
-				data: { score: "850", time: "2:45" },
-				notification: {
-					title: "subscription",
-					body: "someone subscribe",
-				},
-				topic,
-			};
-			admin
-				.messaging()
-				.send(message)
-				.then((response) => {
-					// Response is a message ID string.
-					console.log("Successfully sent message:", response);
-					res.send(response);
-				})
-				.catch((error) => {
-					console.log("Error sending message:", error);
-				});
+});
+app.post("/sendNotification", async (req, res) => {
+	// Send a message to devices subscribed to the provided topic.
+	let topic = "sam";
+	let message = {
+		data: { score: "850", time: "2:45" },
+		notification: {
+			title: "subscription",
+			body: "someone subscribe",
+		},
+		topic,
+	};
+	admin
+		.messaging()
+		.send(message)
+		.then((response) => {
+			// Response is a message ID string.
+			console.log("Successfully sent message:", response);
+			res.send(response);
 		})
 		.catch((error) => {
-			console.log("Error subscribing to topic:", error);
+			console.log("Error sending message:", error);
 		});
 });
+
 app.listen(port, () => {
 	console.log(`app is listening to ${port}`);
 });
