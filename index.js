@@ -26,7 +26,7 @@ app.post("/subscribe", async (req, res) => {
 			console.log("Successfully subscribed to topic:", response);
 		});
 });
-app.post("/sendNotification", async (req, res) => {
+app.get("/sendNotification", async (req, res) => {
 	// Send a message to devices subscribed to the provided topic.
 	let topic = "sam";
 	let message = {
