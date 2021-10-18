@@ -12,7 +12,7 @@ const port = 8080;
 
 admin.initializeApp({
 	credential: admin.credential.cert(serviceAccount),
-	databaseURL: "https://fcm-s-test-default-rtdb.firebaseio.com/",
+	// databaseURL: "https://fcm-s-test-default-rtdb.firebaseio.com/",
 });
 app.post("/subscribe", async (req, res) => {
 	let registrationTokens = req.body.token;
