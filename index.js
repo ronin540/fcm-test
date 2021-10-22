@@ -36,6 +36,11 @@ app.get("/sendNotification", async (req, res) => {
 			body: "prateek subscribe",
 		},
 		topic,
+		webpush: {
+			fcm_options: {
+				link: "http://localhost:8080/",
+			},
+		},
 	};
 	admin
 		.messaging()

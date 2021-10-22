@@ -47,6 +47,17 @@ function subscribeUser() {
 function sendNotification() {
 	fetch("/sendNotification").then((response) => console.log(response));
 }
+async function getInfo() {
+	let infoRes = await fetch(
+		"https://iid.googleapis.com/iid/info/e2TLKqv2J2RDR7St46L-HX:APA91bFv590SOdKJi1hyB44Z-M8RzmbrRecdDHij8cfe2XRZFq7JHMLMqisrUL46k3s_gmZ14dkZ0J6WP2K7zwAB6ygcLCdp5uOa-yHu-OoGS-4u1Zu0UDUZuaQkH01dXl-aI_stqoDN?Authorization:key=AIzaSyADLkHxkIkQFbjREF2ds6SfzchyIdBzEek"
+	);
+	console.log(infoRes);
+}
+let count = 0;
+
 messaging.onMessage((res) => {
+	console.log("msg here");
 	console.log({ res });
+	count++;
+	document.getElementById("count").innerHTML = count;
 });
